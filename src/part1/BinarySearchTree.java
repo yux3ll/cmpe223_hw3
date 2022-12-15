@@ -122,7 +122,7 @@ public class BinarySearchTree {
 
     private Node addProduct(Node node, int key, String productName, int productQuantity) {
         if (node == null) {
-            System.out.println("\t\t ID: " + key + "\nName: " + productName + "\nPiece: " + productQuantity);
+            System.out.println("\t\t ID: " + key + "\n\t\tName: " + productName + "\n\t\tPiece: " + productQuantity);
             node = new Node(key, productName, productQuantity);
         } else {
             if (key <= node.key) {
