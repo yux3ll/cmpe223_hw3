@@ -6,40 +6,47 @@ public class Driver {
 
     public static void main(String[] args) throws FileNotFoundException {
 
+        int key, quantity;
+        String name;
+        BinarySearchTree tree = new BinarySearchTree();
+
         Scanner sc = new Scanner(System.in);
         String filePath = sc.nextLine();
         Scanner input = new Scanner(new File(filePath));
 
         System.out.println("--------------- WELCOME TO ITS SYSTEM ---------------");
 
-        BinarySearchTree tree = new BinarySearchTree();
 
 
 
+        while(true) {
+            String temp = input.next();
+            switch (temp) {
+                case "Add_product":
+                    System.out.println("Create Product: \n");
+                    key = input.nextInt();
+                    name = input.next();
+                    quantity = input.nextInt();
+                    tree.addProduct(key, name, quantity);
+                    input.nextLine();
+                    break;
+                case "Is_Available":
+                    key = input.nextInt();
+                    tree.searchProduct(key);
+                    input.nextLine();
+                    break;
+                case "Quit":
+                    System.out.println("Thank you for using ITS, Good Bye!");
+                    System.exit(0);
+                    break;
 
+                default:
+                    System.out.println("Invalid operation!");
+                    break;
+            }
+        }
     }
-public int readOperation(Scanner input, String operation) {
-        String temp = input.next();
-        int numerator = 0;
-        switch (temp) {
-            case "Add_product":
-                operation = input.nextLine();
-                numerator = 1;
-                break;
-            case "Is_avaliable":
-                operation = input.nextLine();
-                numerator = 2;
-                break;
-            case "Quit":
-                System.out.println("--------------- THANK YOU FOR USING OUR SYSTEM ---------------");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Invalid operation!");
-                break;
-        }
-     return numerator;
-        }
+
 }
 
 
