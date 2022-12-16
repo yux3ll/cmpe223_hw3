@@ -39,7 +39,7 @@ public class BinarySearchTree {
 
     private Node addProduct(Node node, int key, String productName, int productQuantity) {   // private method to add a new product, recursive
         if (node == null) {    // if the node is null, then it means that the tree is empty, so we create a new node and return it
-            System.out.println("\t\t ID: " + key + "\n\t\tName: " + productName + "\n\t\tPiece: " + productQuantity);
+            System.out.println("\t\tID: " + key + "\n\t\tName: " + productName + "\n\t\tPiece: " + productQuantity);
             node = new Node(key, productName, productQuantity);
         } else {
             if (key < node.key) {  // if the key is less than the key of the node, then we go to the left subtree
