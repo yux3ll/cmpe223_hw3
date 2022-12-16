@@ -159,17 +159,20 @@ public class BinarySearchTree {
                 node.right = deleteCaptain(node.right, key);
             }else{
                 if(node.left == null && node.right == null){
+                    System.out.println("The captain " + node.name + " left CCR");
                     node = null;
                 }else if(node.left == null){
+                    System.out.println("The captain " + node.name + " left CCR");
                     node = node.right;
                 }else if(node.right == null){
+                    System.out.println("The captain " + node.name + " left CCR");
                     node = node.left;
                 }else{
                     Node temp = findMin(node.right);
                     node.key = temp.key;
                     node.right = deleteCaptain(node.right, temp.key);
                 }
-                System.out.println("The captain " + node.name + " left CCR");
+
             }
         }
         return node;
