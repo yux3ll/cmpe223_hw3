@@ -1,9 +1,18 @@
 package part2;
+
 public class BinarySearchTree {
+    //-----------------------------------------------------
+    // Title: BinarySearchTree
+    // Author: Yüksel Çağlar Baypınar & Melisa Subaşı
+    // ID: 43951623744 &
+    // Section: 02
+    // Assignment: 3 - Q2
+    // Description: This class is the BinarySearchTree class of the program, it contains the methods to add, delete, search for, print and change the availability of a captain
+    //-----------------------------------------------
+
     private Node root;
 
     private static class Node{
-
         Node left; // left child
         Node right; // right child
         int key; // key of the node, also id of captain
@@ -17,7 +26,6 @@ public class BinarySearchTree {
             this.ratingStar = ratingStar; // set the rating
             this.isAvailable = isAvailable; // set the availability
         }
-
     }
 
     public BinarySearchTree() {
@@ -43,14 +51,12 @@ public class BinarySearchTree {
         return node;
     }
 
-
-
     public void printCaptain(int key) { // public method to print the info of a captain, calls upon another method that is private and recursive
         System.out.print("Display Captain:"); // print the name of the method
         printCaptain(root, key); // call the recursive method
         System.out.println("----------------------------------------------------------------"); // print a line to separate the methods
-
     }
+
     private Node printCaptain(Node node, int key) { // private method to print the info of a captain, recursive
         if (node == null) { // if the node is null, then it means that the tree is empty, so we print that the captain is not found
             System.out.println(" Couldn't find any captain with ID number " + key);
@@ -77,15 +83,6 @@ public class BinarySearchTree {
             printAllCaptain(node.left); // go to the left subtree
             System.out.println("--CAPTAIN:\n\n\t\t\tID: " + node.key + "\n\t\t\tName: " + node.name + "\n\t\t\tAvailable: " + node.isAvailable + "\n\t\t\tRating star: " + node.ratingStar + "\n"); // print the captain's info
             printAllCaptain(node.right); // go to the right subtree
-        }
-    }
-    private Node findMin(Node node) { // private method to find the minimum node in the tree, recursive, useful for the deletion method
-        if (node == null) { // if the node is null, then it means that the tree is empty, so we return null
-            return null;
-        } else if (node.left == null) { // if the left child of the node is null, then we return the node
-            return node;
-        } else {
-            return findMin(node.left); // go to the left subtree
         }
     }
 
@@ -142,7 +139,6 @@ public class BinarySearchTree {
         return node;
     }
 
-
     public void deleteCaptain(int key){ // public method to delete a captain, calls upon another method that is private and recursive
         System.out.print("Delete Captain:"); // print the name of the method
         root = deleteCaptain(root, key); // set the root to the return value of the recursive method
@@ -176,5 +172,14 @@ public class BinarySearchTree {
             }
         }
         return node;
+    }
+    private Node findMin(Node node) { // private method to find the minimum node in the tree, recursive, useful for the deletion method
+        if (node == null) { // if the node is null, then it means that the tree is empty, so we return null
+            return null;
+        } else if (node.left == null) { // if the left child of the node is null, then we return the node
+            return node;
+        } else {
+            return findMin(node.left); // go to the left subtree
+        }
     }
 }

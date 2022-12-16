@@ -5,6 +5,15 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Driver {
+    //-----------------------------------------------------
+    // Title: Driver
+    // Author: Yüksel Çağlar Baypınar & Melisa Subaşı
+    // ID: 43951623744 &
+    // Section: 02
+    // Assignment: 3 - Q2
+    // Description: This class is the driver class of the program, it reads the file and calls the methods from the BinarySearchTree class using a switch statement in a loop
+    //-----------------------------------------------
+
     public static void main(String[] args) throws FileNotFoundException {
         int key, ratingStar; // key is the ID number of the captain, ratingStar is the rating of the captain, these variables are created as temporary placeholders for data read from the file
         String name; // name is the name of the captain, this variable is created as a temporary placeholder for data read from the file

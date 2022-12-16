@@ -1,8 +1,17 @@
 package part1;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Driver {
+    //-----------------------------------------------------
+    // Title: Driver
+    // Author: Yüksel Çağlar Baypınar & Melisa Subaşı
+    // ID: 43951623744 &
+    // Section: 02
+    // Assignment: 3 - Q1
+    // Description: This class is the driver class of the program, it reads the file and calls the methods from the BinarySearchTree class using a switch statement in a loop
+    //-----------------------------------------------
 
     public static void main(String[] args) throws FileNotFoundException {
 

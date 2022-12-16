@@ -1,6 +1,15 @@
 package part1;
 
 public class BinarySearchTree {
+    //-----------------------------------------------------
+    // Title: BinarySearchTree
+    // Author: Yüksel Çağlar Baypınar & Melisa Subaşı
+    // ID: 43951623744 &
+    // Section: 02
+    // Assignment: 3 - Q1
+    // Description: This class is the BinarySearchTree class of the program, it contains the methods to add a product and search for a product
+    //-----------------------------------------------
+
     private Node root;
 
     public BinarySearchTree() {     // constructor
@@ -44,7 +53,6 @@ public class BinarySearchTree {
         }
         return node;
     }
-
 
     public void searchProduct(int key) { // public method to search a product, calls upon another method that is private and recursive
         root = searchProduct(root, key); // set the root to the return value of the recursive method
