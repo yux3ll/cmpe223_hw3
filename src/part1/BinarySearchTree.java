@@ -7,95 +7,15 @@ public class BinarySearchTree {
         root = null;
     }
 
-    public void insert(int key) {
-        root = insert(root, key);
-    }
-
-    private Node insert(Node node, int key) {
-        if (node == null) {
-            node = new Node(key);
-        } else {
-            if (key <= node.key) {
-                node.left = insert(node.left, key);
-            } else {
-                node.right = insert(node.right, key);
-            }
-        }
-        return node;
-    }
-
-    public void delete(int key) {
-        root = delete(root, key);
-    }
-
-    private Node delete(Node node, int key) {
-        if (node == null) {
-            return null;
-        } else {
-            if (key == node.key) {
-                if (node.left == null && node.right == null) {
-                    return null;
-                } else if (node.left == null) {
-                    return node.right;
-                } else if (node.right == null) {
-                    return node.left;
-                } else {
-                    int min = findMin(node.right);
-                    node.key = min;
-                    node.right = delete(node.right, min);
-                    return node;
-                }
-            } else if (key < node.key) {
-                node.left = delete(node.left, key);
-                return node;
-            } else {
-                node.right = delete(node.right, key);
-                return node;
-            }
-        }
-    }
-
-    private int findMin(Node node) {
-        if (node.left == null) {
-            return node.key;
-        } else {
-            return findMin(node.left);
-        }
-    }
-
-    public boolean search(int key) {
-        return search(root, key);
-    }
-
-    private boolean search(Node node, int key) {
-        if (node == null) {
-            return false;
-        } else {
-            if (key == node.key) {
-                return true;
-            } else if (key < node.key) {
-                return search(node.left, key);
-            } else {
-                return search(node.right, key);
-            }
-        }
-    }
-
-    public void print() {
-        print(root);
-    }
 
 
-    private void print(Node node) {
-        if (node != null) {
-            print(node.left);
-            System.out.print(node.key + " ");
-            print(node.right);
-        }
-    }
 
-    private class Node {
-        private int key;
+
+
+
+
+    private static class Node {
+        private final int key;
         private Node left;
         private Node right;
 
@@ -106,11 +26,6 @@ public class BinarySearchTree {
             this.key = key;
             this.productName = productName;
             this.productQuantity = productQuantity;
-            left = null;
-            right = null;
-        }
-        public Node(int key) {
-            this.key = key;
             left = null;
             right = null;
         }
@@ -125,8 +40,11 @@ public class BinarySearchTree {
             System.out.println("\t\t ID: " + key + "\n\t\tName: " + productName + "\n\t\tPiece: " + productQuantity);
             node = new Node(key, productName, productQuantity);
         } else {
-            if (key <= node.key) {
+            if (key < node.key) {
                 node.left = addProduct(node.left, key, productName, productQuantity);
+            } else if (key== node.key) {
+                node.productQuantity+=productQuantity;
+                System.out.println("Product already exists, quantity increased by " + productQuantity);
             } else {
                 node.right = addProduct(node.right, key, productName, productQuantity);
             }

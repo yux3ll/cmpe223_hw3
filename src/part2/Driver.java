@@ -22,44 +22,42 @@ public class Driver {
         while(true) {
             String temp = input.next();
             switch (temp) {
-                case "Add_Captain":
+                case "Add_Captain" -> {
                     key = input.nextInt();
                     name = input.next();
                     tree.addCaptain(key, name);
                     input.nextLine();
-                    break;
-                case "Is_Available":
+                }
+                case "Is_Available" -> {
                     key = input.nextInt();
                     tree.startRide(key);
                     input.nextLine();
-                    break;
-                case "Finish":
+                }
+                case "Finish" -> {
                     key = input.nextInt();
                     ratingStar = input.nextInt();
                     tree.endRide(key, ratingStar);
                     input.nextLine();
-                    break;
-                case "Display_captain":
+                }
+                case "Display_captain" -> {
                     key = input.nextInt();
                     tree.printCaptain(key);
                     input.nextLine();
-                    break;
-                case "Display_all_captains":
+                }
+                case "Display_all_captains" -> {
                     tree.printAllCaptain();
                     input.nextLine();
-                    break;
-                    case "Delete_captain":
+                }
+                case "Delete_captain" -> {
                     key = input.nextInt();
                     tree.deleteCaptain(key);
                     input.nextLine();
-                    break;
-                case "Quit":
+                }
+                case "Quit" -> {
                     System.out.println("Thank you for using CDRC, Good Bye!");
                     System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid operation!");
-                    break;
+                }
+                default -> System.out.println("Invalid operation!");
             }
         }
     }

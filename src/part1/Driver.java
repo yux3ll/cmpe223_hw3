@@ -1,6 +1,4 @@
 package part1;
-import part2.BinarySearchTree;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,7 +6,7 @@ public class Driver {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        int key;
+        int key, quantity;
         String name;
         BinarySearchTree tree = new BinarySearchTree();
 
@@ -24,27 +22,24 @@ public class Driver {
         while(true) {
             String temp = input.next();
             switch (temp) {
-                case "Add_product":
-
+                case "Add_product" -> {
+                    System.out.println("Create Product: \n");
                     key = input.nextInt();
                     name = input.next();
-
-                    tree.addCaptain(key, name);
+                    quantity = input.nextInt();
+                    tree.addProduct(key, name, quantity);
                     input.nextLine();
-                    break;
-                case "Is_Available":
+                }
+                case "Is_Available" -> {
                     key = input.nextInt();
-                    //tree.searchProduct(key);
+                    tree.searchProduct(key);
                     input.nextLine();
-                    break;
-                case "Quit":
-                    System.out.println("Thank you for using CDRC, Good Bye!");
+                }
+                case "Quit" -> {
+                    System.out.println("Thank you for using ITS, Good Bye!");
                     System.exit(0);
-                    break;
-
-                default:
-                    System.out.println("Invalid operation!");
-                    break;
+                }
+                default -> System.out.println("Invalid operation!");
             }
         }
     }

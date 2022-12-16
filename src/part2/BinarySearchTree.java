@@ -2,7 +2,7 @@ package part2;
 public class BinarySearchTree {
     private Node root;
 
-    private class Node{
+    private static class Node{
 
         Node left;
         Node right;
@@ -32,7 +32,7 @@ public class BinarySearchTree {
     }
     private Node addCaptain(Node node, int key, String name) {
         if (node == null) {
-            node = new Node(key, name, 0,true);
+            node = new Node(key, name, 0, true);
             System.out.println("\t\t\tID: " + key + "\n\t\t\tName: " + name + "\n\t\t\tAvailable: True\n\t\t\tRating star: 0");
         } else {
             if (key <= node.key) {
