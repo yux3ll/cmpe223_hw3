@@ -28,42 +28,48 @@ public class Driver {
         while(true) { // loop until the user enters the "Quit" command
             String temp = input.next(); // read the next word from the file, that will determine the operation to be done
             switch (temp) { // switch statement to determine the operation to be done
-                case "Add_Captain" -> {  // if the user enters the "Add_Captain" command, call the addCaptain method from the BinarySearchTree class after reading the necessary data from the file
+                case "Add_Captain" : {  // if the user enters the "Add_Captain" command, call the addCaptain method from the BinarySearchTree class after reading the necessary data from the file
                     key = input.nextInt();
                     name = input.next();
                     tree.addCaptain(key, name);
                     input.nextLine();
+                    break;
                 }
-                case "Is_Available" -> { // if the user enters the "Is_Available" command, call the startCaptain method from the BinarySearchTree class after reading the necessary data from the file
+                case "Is_Available" : { // if the user enters the "Is_Available" command, call the startCaptain method from the BinarySearchTree class after reading the necessary data from the file
                     key = input.nextInt();
                     tree.startRide(key);
                     input.nextLine();
+                    break;
                 }
-                case "Finish" -> { // if the user enters the "Finish" command, call the finishRide method from the BinarySearchTree class after reading the necessary data from the file
+                case "Finish" : { // if the user enters the "Finish" command, call the finishRide method from the BinarySearchTree class after reading the necessary data from the file
                     key = input.nextInt();
                     ratingStar = input.nextInt();
                     tree.endRide(key, ratingStar);
                     input.nextLine();
+                    break;
                 }
-                case "Display_captain" -> { // if the user enters the "Display_captain" command, call the printCaptain method from the BinarySearchTree class after reading the necessary data from the file
+                case "Display_captain" : { // if the user enters the "Display_captain" command, call the printCaptain method from the BinarySearchTree class after reading the necessary data from the file
                     key = input.nextInt();
                     tree.printCaptain(key);
                     input.nextLine();
+                    break;
                 }
-                case "Display_all_captains" -> { // if the user enters the "Display_all_captains" command, call the printAllCaptains method from the BinarySearchTree class
+                case "Display_all_captains" : { // if the user enters the "Display_all_captains" command, call the printAllCaptains method from the BinarySearchTree class
                     tree.printAllCaptain();
                     input.nextLine();
+                    break;
                 }
-                case "Delete_captain" -> { // if the user enters the "Delete_captain" command, call the deleteCaptain method from the BinarySearchTree class after reading the necessary data from the file
+                case "Delete_captain" : { // if the user enters the "Delete_captain" command, call the deleteCaptain method from the BinarySearchTree class after reading the necessary data from the file
                     key = input.nextInt();
                     tree.deleteCaptain(key);
                     input.nextLine();
+                    break;
                 }
-                case "Quit" -> { // if the user enters the "Quit" command, print the goodbye message and exit the program
+                case "Quit" : { // if the user enters the "Quit" command, print the goodbye message and exit the program
                     System.out.println("Thank you for using CDRC, Good Bye!");
                     System.exit(0);
                 }
-                default -> System.out.println("Invalid operation!"); // if the user enters an invalid operation, print the invalid operation message
+                default : System.out.println("Invalid operation!"); // if the user enters an invalid operation, print the invalid operation message
             }
         }
     }
