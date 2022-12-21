@@ -21,7 +21,7 @@ public class BinarySearchTree {
         private Node left; // left child
         private Node right; // right child
 
-        private String productName; // name of the product
+        private final String productName; // name of the product
         private int productQuantity; // quantity of the product
 
         public Node (int key,String productName, int productQuantity) {     // constructor of Node
